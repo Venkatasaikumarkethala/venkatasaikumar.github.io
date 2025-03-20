@@ -1,0 +1,610 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* -------------------------------------
+   Global Styles
+------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Set default font */
+}
+
+*::selection {
+  background: #fff;  /* Selection background color */
+  color: #0c1022;    /* Selection text color */
+}
+
+body {
+  background: #0c1022;  /* Overall page background color */
+  color: #fff;          /* Default text color */
+}
+
+/* -------------------------------------
+   HEADER & NAVBAR
+------------------------------------- */
+.header {
+  position: fixed;     /* Fixed header at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;        /* Ensure it stays on top */
+}
+
+.logo {
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  pointer-events: none; /* Logo is non-clickable */
+  opacity: 0;
+  animation: slideTop 1s ease forwards; /* Entrance animation */
+}
+
+.navbar a {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i)); /* Stagger animation delay */
+}
+
+.navbar a.active,
+.navbar a:hover {
+  /* Gradient text effect on hover and active */
+  background: linear-gradient(45deg, #f06, #3cf);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.nav-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  flex-direction: column;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.nav-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin-bottom: 4px;
+  border-radius: 3px;
+}
+
+/* -------------------------------------
+   HERO SECTION (Home)
+------------------------------------- */
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+
+.home-sci a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #f06, #3cf);
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  margin: 20px 0;
+  z-index: 1;
+}
+
+/* Individual animations for social icons */
+.home-sci a:nth-child(1) {
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.home-sci a:nth-child(2) {
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.home-sci a:nth-child(3) {
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+/* Hover effects for social icons */
+.home-sci a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f06, #3cf);
+  border-radius: 50%;
+  z-index: -1;
+  transition: 0.5s ease;
+}
+
+.home-sci a:hover::before {
+  filter: blur(5px);
+}
+
+.home-sci a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0c1022;
+  border-radius: 50%;
+  transform: scale(0.88);
+  z-index: -1;
+  transition: 0.5s ease;
+}
+
+.home-sci a:hover::after {
+  transform: scale(0);
+}
+
+/* Home content styling */
+.home-content {
+  max-width: 500px;
+  margin-left: -30px;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 48px;
+  border-radius: 40px;
+  font-size: 19px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1.8s;
+}
+
+/* Gradient animation on button */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background: linear-gradient(45deg, #f06, #3cf, #f06);
+  background-size: 200%;
+  background-position: 0 0;
+  z-index: -1;
+  border-radius: 40px;
+  filter: blur(5px);
+  transition: 0.5s ease;
+}
+
+.btn:hover::before {
+  background-position: 100% 0;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background: linear-gradient(45deg, #f06, #3cf, #f06);
+  background-size: 200%;
+  background-position: 0 0;
+  z-index: -1;
+  border-radius: 40px;
+  transition: 0.5s ease;
+}
+
+.btn:hover::after {
+  background-position: 100% 0;
+}
+
+/* Home Image & Glowing Circle */
+.home-img {
+  width: 410px;
+  height: 410px;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2.1s, 3.1s;
+}
+
+.home-img .glowing-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img .glowing-circle::after {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: #0c1022;
+  border-radius: 50%;
+}
+
+.glowing-circle span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f06, #3cf);
+  border-radius: 50%;
+  animation: circleRotate 5s linear infinite;
+}
+
+.glowing-circle span:nth-child(1) {
+  filter: blur(10px);
+}
+
+.glowing-circle .image {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.image img {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 350px;
+  object-fit: cover;
+}
+
+/* -------------------------------------
+   NEW SECTIONS STYLING (About, Skills, Portfolio, Contact)
+------------------------------------- */
+.about, .skills, .portfolio, .contact {
+  padding: 70px 10%;
+  text-align: center;
+}
+
+/* Container for sections */
+.about .container,
+.skills .container,
+.portfolio .container,
+.contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------
+   PORTFOLIO SECTION SPECIFIC STYLING
+------------------------------------- */
+/* Portfolio Section Background matching overall theme */
+.portfolio {
+  background: linear-gradient(45deg, #0c1022, #1a263a);
+  color: #fff;
+}
+
+/* Project Grid: Two columns per row */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Project Card Styling */
+.project-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+}
+
+/* Unique Backgrounds for Each Project Card */
+.project-1 {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+.project-2 {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+}
+.project-3 {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+.project-4 {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+/* -------------------------------------
+   SKILLS DROPDOWN STYLING
+------------------------------------- */
+.skills-dropdown details {
+  background: linear-gradient(45deg, #f06, #3cf, #f06); /* Gradient matching the Hire Me button */
+  border: none;  /* Remove borders/outlines */
+  border-radius: 5px;
+  margin: 15px auto;
+  padding: 10px;
+  width: 80%;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.skills-dropdown details summary {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding-right: 25px; /* Space for arrow */
+  list-style: none;
+}
+
+.skills-dropdown details summary::after {
+  content: "\25BC"; /* Down arrow */
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.skills-dropdown details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.skills-dropdown details ul {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-dropdown details ul li {
+  display: inline-block;
+  background: #f06; /* Pink background for skill buttons */
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 14px;
+  color: #fff;
+  border: none; /* Remove outline */
+  transition: transform 0.3s ease;
+}
+
+.skills-dropdown details ul li:hover {
+  transform: scale(1.05);
+}
+
+/* -------------------------------------
+   FOOTER STYLING
+------------------------------------- */
+footer {
+  background: #0c1022;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+/* -------------------------------------
+   RESPONSIVE STYLES
+------------------------------------- */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #222;
+    width: 200px;
+    display: none;
+  }
+  .nav-menu li {
+    margin: 10px 0;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* -------------------------------------
+   KEYFRAMES (Animations)
+------------------------------------- */
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* SKILLS DROPDOWN STYLING */
+.skills-dropdown details {
+    background: #0c1022;       /* Same as the overall page background */
+    border: 1px solid #444;    /* Optional border for visual separation */
+    border-radius: 5px;
+    margin: 15px auto;
+    padding: 10px;
+    width: 80%;                /* Adjust as needed */
+    text-align: left;
+    transition: background 0.3s ease;
+  }
+  
+  .skills-dropdown details summary {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding-right: 25px;       /* Space for the arrow indicator */
+    list-style: none;
+  }
+  
+  /* Arrow Indicator */
+  .skills-dropdown details summary::after {
+    content: "\25BC";          /* Unicode for a down arrow */
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  .skills-dropdown details[open] summary::after {
+    transform: rotate(180deg); /* Rotate arrow when open */
+  }
+  
+  /* Individual Skill Pill Buttons */
+.skills-dropdown details ul li {
+    display: inline-block;
+    /* Using the Hire Me button gradient */
+    background: linear-gradient(45deg, #f06, #3cf, #f06);
+    padding: 8px 16px;
+    border-radius: 20px;       /* Oval shape */
+    margin: 5px;
+    font-size: 14px;
+    color: #fff;
+    border: none;              /* No outlines */
+    transition: transform 0.3s ease;
+  }
+  
+  .skills-dropdown details ul li:hover {
+    transform: scale(1.05);    /* Slight enlargement on hover */
+  }
+  
+  /* Individual Skill Pill Buttons */
+  .skills-dropdown details ul li {
+    display: inline-block;
+    background: linear-gradient(45deg, #f06, #3cf);         /* Pink background for skill pills */
+    padding: 8px 16px;
+    border-radius: 20px;       /* Oval shape */
+    margin: 5px;
+    font-size: 14px;
+    color: #fff;
+    border: none;              /* No outlines */
+    transition: transform 0.3s ease;
+  }
+  
+  .skills-dropdown details ul li:hover {
+    transform: scale(1.05);    /* Slight enlargement on hover */
+  }

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="#" class="logo">Portfolio.</a>
+        <nav class="navbar">
+            <!-- Updated navigation links with proper section IDs -->
+            <a href="#home" style="--i:1;" class="active">Home</a>
+            <a href="#about" style="--i:2;">About</a>
+            <a href="#skills" style="--i:3;">Skills</a>
+            <a href="#portfolio" style="--i:4;">Portfolio</a>
+            <a href="#contact" style="--i:5;">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section class="home" id="home">
+        <div class="home-sci">
+            <a href="https://www.facebook.com/yourprofile" target="_blank"><i class='bx bxl-facebook'></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class='bx bxl-linkedin'></i></a>
+          </div>
+
+        <div class="home-content">
+            <h1>Hi, I'm Venkata Sai Kumar Kethala</h1>
+            <h3>Software Developer</h3>
+            <p>Experienced Advanced App Associate Engineer</p>
+            <a href="#" class="btn">Hire Me</a>
+        </div>
+
+        <div class="home-img">
+            <div class="glowing-circle">
+                <span></span>
+                <span></span>
+                <div class="image">
+                    <img src="home.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate Frontend Developer with a knack for creating visually stunning and responsive websites. I love blending creative design with clean code to deliver an engaging user experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <!-- SKILLS SECTION -->
+<section class="skills" id="skills">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="skills-dropdown">
+        <details>
+          <summary>Programming &amp; Data Analysis <span class="arrow"></span></summary>
+          <ul>
+            <li>Python</li>
+            <li>R</li>
+            <li>SQL</li>
+            <li>Java</li>
+            <li>Pandas</li>
+            <li>C#</li>
+            <li>Nest.js</li>
+            <li>Postgres</li>
+            <li>Cosmos DB</li>
+          </ul>
+        </details>
+        <details>
+          <summary>ML/Cloud &amp; Big Data <span class="arrow"></span></summary>
+          <ul>
+            <li>TensorFlow</li>
+            <li>Azure</li>
+            <li>Hadoop</li>
+            <li>AWS</li>
+            <li>ARIMA</li>
+            <li>.NET</li>
+            <li>Node.js</li>
+            <li>Sentiment Analysis</li>
+          </ul>
+        </details>
+        <details>
+          <summary>DevOps &amp; Collaboration <span class="arrow"></span></summary>
+          <ul>
+            <li>Docker</li>
+            <li>MLflow</li>
+            <li>Airflow</li>
+            <li>Jenkins</li>
+            <li>Eclipse</li>
+            <li>Git</li>
+            <li>VS Code</li>
+            <li>Jira</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Visualization &amp; Databases <span class="arrow"></span></summary>
+          <ul>
+            <li>Tableau</li>
+            <li>Power BI</li>
+            <li>MySQL</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Certificates <span class="arrow"></span></summary>
+          <ul>
+            <li>Microsoft badge in Python &amp; Azure fundamentals</li>
+            <li>AI certificate by Smart Knower</li>
+            <li>Google data</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+    <!-- PROJECTS SECTION -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>Project Highlights</h2>
+      <p>Explore my selected projects below.</p>
+      
+      <!-- First Project Grid -->
+      <div class="project-grid">
+        <!-- Project Card 1 -->
+        <div class="card project-card project-1">
+          <h3>E-Commerce Web Applications</h3>
+          <p>Responsive platform using React.js and Node.js.</p>
+          <details>
+            <summary>See More</summary>
+            <ul>
+              <li>Integrated payment gateways and user authentication.</li>
+              <li>Optimized MongoDB queries to cut page load times by 30%.</li>
+              <li>Increased conversion rates by 15%.</li>
+            </ul>
+            <p>Project Image:</p>
+            <img src="images/ecommerce.png" alt="E-Commerce Web Applications Screenshot">
+            <p>GitHub Repository: <a href="https://github.com/yourgithublink" target="_blank">Repository Link</a></p>
+          </details>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="card project-card project-2">
+          <h3>Speech Emotion Recognition</h3>
+          <p>Real-time emotion analysis from speech signals.</p>
+          <details>
+            <summary>See More</summary>
+            <ul>
+              <li>Extracted MFCCs, Chroma, and Mel Spectrogram features.</li>
+              <li>Evaluated multiple classifiers to achieve 82.67% accuracy.</li>
+              <li>Enabled real-time predictions.</li>
+            </ul>
+            <p>Project Image:</p>
+            <img src="images/speech_emotion.png" alt="Speech Emotion Recognition Screenshot">
+            <p>GitHub Repository: <a href="https://github.com/yourgithublink" target="_blank">Repository Link</a></p>
+          </details>
+        </div>
+      </div>
+      
+      <!-- Second (Duplicate) Project Grid -->
+      <div class="project-grid">
+        <!-- Project Card 3 -->
+        <div class="card project-card project-3">
+          <h3>Administrative Dashboard</h3>
+          <p>Dashboard built with ASP.NET Core and Angular.</p>
+          <details>
+            <summary>See More</summary>
+            <ul>
+              <li>Integrated data from 5+ systems for comprehensive product management.</li>
+              <li>Streamlined order processing for 150+ products, reducing manual processing time by 35%.</li>
+              <li>Enabled real-time analytics for 200+ daily users, boosting decision-making speed by 25%.</li>
+            </ul>
+            <p>Project Image:</p>
+            <img src="images/admin_dashboard.png" alt="Administrative Dashboard Screenshot">
+            <p>GitHub Repository: <a href="https://github.com/yourgithublink" target="_blank">Repository Link</a></p>
+          </details>
+        </div>
+        <!-- Project Card 4 -->
+        <div class="card project-card project-4">
+          <h3>Smart Knower Image Classification</h3>
+          <p>Supervised learning-based image classification model.</p>
+          <details>
+            <summary>See More</summary>
+            <ul>
+              <li>Improved classification accuracy by 20% in 3 months.</li>
+              <li>Built data pipelines for 1,000+ samples, boosting training efficiency by 25%.</li>
+              <li>Delivered strategic briefs to stakeholders, reducing project turnaround time by 15%.</li>
+            </ul>
+            <p>Project Image:</p>
+            <img src="images/smartknower.png" alt="Smart Knower Image Classification Screenshot">
+            <p>GitHub Repository: <a href="https://github.com/yourgithublink" target="_blank">Repository Link</a></p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- CONTACT SECTION -->
+    <!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>If you're interested in collaborating or learning more about my work, please feel free to reach out!</p>
+      <div class="contact-info">
+        <p><i class='bx bxs-phone'></i> (551-587-2213)</p>
+        <p><i class='bx bxs-envelope'></i> <a href="mailto:venkatasaikumarkethala@gmail.com">venkatasaikumarkethala@gmail.com</a></p>
+        <p><i class='bx bxl-linkedin'></i> <a href="https://www.linkedin.com/in/saikumarkethala" target="_blank">LinkedIn Profile</a></p>
+        <p><i class='bx bxl-github'></i> <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a></p>
+      </div>
+    </div>
+  </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container contact-footer">
+          <p class="footer-note">&copy; 2025 Venkata Sai Kumar Kethala. All rights reserved.</p>
+        </div>
+      </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
